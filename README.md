@@ -1,1 +1,3 @@
 # libApp
+
+UI for Administration of the Library. Also UI for Users with Book Reservations etc...
