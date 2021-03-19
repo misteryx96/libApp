@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace LibApp.Data.Model.Domain
 {
@@ -15,7 +13,7 @@ namespace LibApp.Data.Model.Domain
         //TODO: Prolly needs table
         public string Category { get; set; }
         public string Edition { get; set; }
-        //TODO: Needs table
+        public Department Department;
         public int DepartmentId { get; set; }
         public bool IsAvailable { get; set; }
         public bool IsReserved { get; set; }
