@@ -19,5 +19,6 @@ namespace LibApp.Data.Model.Domain
         public bool IsReserved { get; set; }
         //TODO: Consider if needed
         public bool IsDeleted { get; set; }
+        //TODO: EF Joint table or not for Author?
     }
 }
