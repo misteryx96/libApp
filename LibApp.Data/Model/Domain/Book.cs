@@ -6,19 +6,17 @@ namespace LibApp.Data.Model.Domain
     {
         public int Id { get; set; }
         public string Code { get; set; }
-        public DateTime CreatedTimeStamp { get; set; }
-        public DateTime ModifiedTimestamp { get; set; }
+        public bool IsAvailable { get; set; }
+        public int DepartmentId { get; set; }
+        public bool IsDeleted { get; set; }
+        //public bool IsReserved { get; set; }
         public string Title { get; set; }
         public string Publisher { get; set; }
-        //TODO: Prolly needs table
         public string Category { get; set; }
+        public string Issue { get; set; }
         public string Edition { get; set; }
+        public DateTime CreatedTimeStamp { get; set; }
+        public DateTime ModifiedTimestamp { get; set; }
         public Department Department;
-        public int DepartmentId { get; set; }
-        public bool IsAvailable { get; set; }
-        public bool IsReserved { get; set; }
-        //TODO: Consider if needed
-        public bool IsDeleted { get; set; }
-        //TODO: EF Joint table or not for Author?
     }
 }
