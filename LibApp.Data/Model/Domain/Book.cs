@@ -42,12 +42,12 @@ namespace LibApp.Data.Model.Domain
         public string Edition { get; set; }
         public bool IsAvailable { get; set; }
         public bool IsDeleted { get; set; }
-        public int DepartmentId { get; set; }
+        public int? DepartmentId { get; set; }
         public Department Department;
         public virtual ICollection<Author> Authors { get; set; }
-        public int ReservationId { get; set; }
+        public int? ReservationId { get; set; }
         public Reservation Reservation { get; set; }
         public DateTime CreatedTimeStamp { get; set; }
-        public DateTime ModifiedTimestamp { get; set; }
+        public DateTime? ModifiedTimestamp { get; set; }
     }
 }

@@ -44,7 +44,22 @@ namespace LibApp.Data.Model.Configurations
                 .IsRequired()
                 .HasDefaultValue(false);
 
+            builder.HasOne(b => b.Department)
+                .WithMany(d => d.Books)
+                .HasForeignKey(b => b.DepartmentId);
 
+            builder.Property(b => b.ReservationId);
+
+            builder.HasOne(b => b.Reservation)
+                .WithMany(r => r.Books);
+
+            builder.Property(b => b.ReservationId);
+
+            builder.Property(b => b.CreatedTimeStamp)
+                .IsRequired()
+                .HasDefaultValueSql("getdate()");
+
+            builder.Property(b => b.ModifiedTimestamp);
         }
     }
 }
