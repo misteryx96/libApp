@@ -26,9 +26,7 @@ namespace LibApp.Data.Model.Configurations
             builder.Property(b => b.Publisher)
                 .HasMaxLength(128);
 
-            builder.Property(b => b.Category)
-                .HasMaxLength(32)
-                .HasConversion<string>();
+            builder.Property(b => b.Category);
 
             builder.Property(b => b.Issue)
                 .HasMaxLength(64);
@@ -56,8 +54,7 @@ namespace LibApp.Data.Model.Configurations
             builder.Property(b => b.ReservationId);
 
             builder.Property(b => b.CreatedTimeStamp)
-                .IsRequired()
-                .HasDefaultValueSql("getdate()");
+                .IsRequired();
 
             builder.Property(b => b.ModifiedTimestamp);
         }
