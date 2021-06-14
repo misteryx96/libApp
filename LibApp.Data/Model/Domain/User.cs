@@ -15,6 +15,10 @@ namespace LibApp.Data.Model.Domain
     }
     public class User
     {
+        public User()
+        {
+            CreatedTimeStamp = DateTime.Now;
+        }
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

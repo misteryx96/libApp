@@ -4,6 +4,7 @@ using System.ComponentModel;
 
 namespace LibApp.Data.Model.Domain
 {
+    [Flags]
     public enum Category : byte
     {
         [Description("LA_Category_Thriller")]
@@ -33,6 +34,10 @@ namespace LibApp.Data.Model.Domain
     }
     public class Book
     {
+        public Book()
+        {
+            CreatedTimeStamp = DateTime.Now;
+        }
         public int Id { get; set; }
         public string Code { get; set; }
         public string Title { get; set; }
@@ -43,11 +48,12 @@ namespace LibApp.Data.Model.Domain
         public bool IsAvailable { get; set; }
         public bool IsDeleted { get; set; }
         public int? DepartmentId { get; set; }
-        public Department Department;
+        public virtual Department Department { get; set; }
         public virtual ICollection<Author> Authors { get; set; }
         public int? ReservationId { get; set; }
-        public Reservation Reservation { get; set; }
+        public virtual Reservation Reservation { get; set; }
         public DateTime CreatedTimeStamp { get; set; }
         public DateTime? ModifiedTimestamp { get; set; }
+        //TODO: Created/Modified by User
     }
 }

@@ -5,6 +5,10 @@ namespace LibApp.Data.Model.Domain
 {
     public class Reservation
     {
+        public Reservation()
+        {
+            CreatedTimeStamp = DateTime.Now;
+        }
         public int Id { get; set; }
         public DateTime CreatedTimeStamp { get; set; }
         public DateTime ModifiedTimestamp { get; set; }
@@ -13,9 +17,9 @@ namespace LibApp.Data.Model.Domain
         public DateTime? TookDateTime { get; set; }
         public DateTime? ReturnDateTime { get; set; }
         public int UserId { get; set; }
-        public User Users { get; set; }
+        public virtual User User { get; set; }
         public int LibrarianId { get; set; }
-        public User Librarian { get; set; }
+        public virtual User Librarian { get; set; }
         public virtual ICollection<Book> Books { get; set; }
     }
 }
